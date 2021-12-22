@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { EntryProvider } from './context/EntryContext';
+import { NameProvider } from './context/NameContext'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+test('renders guest book page', () => {
+  render(  <NameProvider>
+    <EntryProvider>
+      <App />
+    </EntryProvider>
+    </NameProvider>);
+  const linkElement = screen.getByText(/Sign Book/i);
   expect(linkElement).toBeInTheDocument();
 });
