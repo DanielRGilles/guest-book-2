@@ -9,17 +9,24 @@ export default function Input() {
     const [ user, setUser ] = useState('');
 
 
+
+    const userInput = (
+      <div>
+        <label htmlFor='name' >Name:</label>
+          <input id='name' name='name' type="text" value={user} onChange={(e) => setUser(e.target.value)} />
+      </div>
+    )
+
     const handleSubmit = (e) => {
       e.preventDefault();
       setName(user)
-      setEntry(...entry, {guestEntry})
+      setEntry([...entry, {guestEntry}]);
+      setGuestEntry('');
     }
     return (
         <div>
             <form onSubmit={handleSubmit}>
-            <label htmlFor='name' >Name:</label>
-          <input id='name' name='name' type="text" value={user} onChange={(e) => setUser(e.target.value)} />
-            
+           {name ? null : userInput }
             <label htmlFor='entry' >Message:</label>
           <input id='entry' name='entry' type="text" value={guestEntry} onChange={(e) => setGuestEntry(e.target.value)} />
           <button type='submit'>Sign Book </button>
