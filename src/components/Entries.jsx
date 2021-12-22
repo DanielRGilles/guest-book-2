@@ -7,7 +7,7 @@ export default function Entries() {
     const { entry } = useEntry();
     const { name } = useName();
     return (
-        <div>
+        <div className='entries'>
             <ListEntries entry={entry} name={name}/>
             
         </div>

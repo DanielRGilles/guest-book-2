@@ -10,13 +10,7 @@ export default function Input() {
 
 
 
-    const userInput = (
-      <div>
-        <label htmlFor='name' >Name:</label>
-          <input id='name' name='name' type="text" value={user} onChange={(e) => setUser(e.target.value)} />
-      </div>
-    )
-
+   
       function guestName() {
         if (!guestEntry) return
         setName(user)
@@ -29,15 +23,23 @@ export default function Input() {
       guestName();
      
     }
+
+    const userInput = (
+      <>
+        <label className='text-center' htmlFor='name' >Guest</label>
+          <input className='border-4 p-1 m-3 w-full' id='name' name='name' type="text" value={user} onChange={(e) => setUser(e.target.value)} />
+      </>
+    )
+
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <>
+            <form className='flex flex-col items-center justify-center' onSubmit={handleSubmit}>
            {name ? null : userInput }
-            <label htmlFor='entry' >Message:</label>
-          <input id='entry' name='entry' type="text" value={guestEntry} onChange={(e) => setGuestEntry(e.target.value)} />
-          <button type='submit'>Sign Book </button>
+            <label className='text-center' htmlFor='entry'>Entry</label>
+          <input className='border-4 p-1 m-3 w-full' id='entry' name='entry' type="text" value={guestEntry} onChange={(e) => setGuestEntry(e.target.value)} />
+          <button className='bg-white btn-sub p-2 rounded' type='submit'>Sign Book </button>
             </form>
             
-        </div>
+        </>
     )
 }

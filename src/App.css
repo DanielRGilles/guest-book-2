@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+html, body {
+  font-family: monospace;
+}
 
 .App-logo {
   height: 40vmin;
@@ -23,11 +26,24 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.header-top {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  
 }
-
+.btn-sub {
+  align-self: center;
+  justify-self: center;
+}
+form {
+  display: flex;
+  padding: 4px;
+}
+.cnt {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +51,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  background-color: bisque;
+}
+footer {
+  position: fixed;
+  bottom: 5px; 
+}
+.entries {
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  color: white;
+}
+.guest-cnt {
+  background-color: rgb(175, 121, 22);
+  border-radius: 5px;
+  border: solid 2px black;
+}
+.guest-msg {
+  color: black;
 }
