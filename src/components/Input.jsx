@@ -17,11 +17,17 @@ export default function Input() {
       </div>
     )
 
+      function guestName() {
+        if (!guestEntry) return
+        setName(user)
+        setEntry([...entry, {name: user, message: guestEntry}]);
+        setGuestEntry('');
+       }
+
     const handleSubmit = (e) => {
       e.preventDefault();
-      setName(user)
-      setEntry([...entry, {guestEntry}]);
-      setGuestEntry('');
+      guestName();
+     
     }
     return (
         <div>
@@ -31,6 +37,7 @@ export default function Input() {
           <input id='entry' name='entry' type="text" value={guestEntry} onChange={(e) => setGuestEntry(e.target.value)} />
           <button type='submit'>Sign Book </button>
             </form>
+            
         </div>
     )
 }
