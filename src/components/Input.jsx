@@ -7,9 +7,6 @@ export default function Input() {
     const { entry, setEntry } = useEntry([]);
     const [ guestEntry, setGuestEntry ] = useState('');
     const [ user, setUser ] = useState('');
-
-
-
    
       function guestName() {
         if (!guestEntry) return
