@@ -8,8 +8,6 @@ module.exports = {
       jest: true,
     },
     extends: [
-      'airbnb',
-      'airbnb/hooks',
       'plugin:jsx-a11y/recommended',
       'plugin:import/recommended',
       'plugin:prettier/recommended',
