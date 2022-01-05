@@ -4,10 +4,19 @@ import { useAuth } from './../hooks/useAuth';
 import { useForm } from './../hooks/useForm';
 
 export default function Login() {
+    const history = useHistory();
+  const location = useLocation();
+  const auth = useAuth();
+  const { formState, handleFormChange } = useForm({ email: '', password: '' });
+  const [error, setError] = useState(null);
+
+  // The `from` property of `location.state` gives us
+  // the URL to redirect to after logging in.
+  const { from } = location.state || { from: { pathname: '/' } };
     return (
         <fieldset className="w-1/4 border p-4 mt-8">
                  <legend>Sign In</legend>
-                    <form className="grid grid-cols-[1fr_2fr] grid-rows-3">
+                    <form onSubmit={handleSubmit}className="grid grid-cols-[1fr_2fr] grid-rows-3">
                         <label htmlFor="username" className="self-center text-right">
                          Username
                         </label>
