@@ -4,6 +4,7 @@ import { useName } from '../context/NameContext';
 
 
 
+
 export default function Login() {
   const history = useHistory();
   const { name, setName } = useName();
@@ -20,20 +21,22 @@ export default function Login() {
     e.preventDefault()
     const { username, password } = formState
     if (
-      username === process.env.AUTH_EMAIL &&
-      password === process.env.AUTH_PASSWORD
+      username === process.env.REACT_APP_AUTH_EMAIL &&
+      password === process.env.REACT_APP_AUTH_PASSWORD
     ) {
       setName(username)
       history.push('/guest-book')
     } else {
       setError('Sign in Failed')
+      console.log(process.env.REACT_APP_AUTH_EMAIL, process.env.REACT_APP_AUTH_PASSWORD )
+      console.log(username, password)
     }
 }
 if(name.auth) return <Redirect to='/'/>
 
     return (
         <fieldset className="w-1/4 border p-4 mt-8">
-            <legend>Sign In</legend>
+            <legend className='legend-log'>Log In</legend>
               <form onSubmit={handleSubmit} className="grid grid-cols-[1fr_2fr] grid-rows-3">
                 <label htmlFor="username" className="self-center text-right">
                          Username

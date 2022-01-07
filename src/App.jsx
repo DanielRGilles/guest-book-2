@@ -3,18 +3,17 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  
 } from "react-router-dom";
 import { PrivateRoute } from './components/PrivateRoute';
 import GuestBook from "./views/GuestBook";
 import Login from './views/Login'
-import Layout from "./views/Layout";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <Router>
-      <div>
-     <Layout />
+     <Header />
         <Switch>
            <Route path="/login">
             <Login />
@@ -22,10 +21,8 @@ export default function App() {
           <PrivateRoute path="/guest-book">
             <GuestBook />
           </PrivateRoute>
-         
         </Switch>
-        
-      </div>
+        <Footer />
     </Router>
   );
 }

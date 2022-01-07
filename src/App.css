@@ -58,6 +58,7 @@ form {
   justify-content: center;
   align-items: center;  
   background-color: bisque;
+  height: 100vh;
 }
 footer {
   position: fixed;
@@ -68,12 +69,49 @@ footer {
   flex-direction: column;
   font-size: larger;
   color: white;
+ 
 }
 .guest-cnt {
   background-color: rgb(175, 121, 22);
   border-radius: 5px;
   border: solid 2px black;
+  min-height: 15%;
 }
 .guest-msg {
   color: black;
+  min-height: 50px;
+  text-align: center;
+  font-size: larger;
+  
+}
+.logout-button {
+  border-radius: 5px;
+  border: solid black 2px;
+  background-color: white;
+  cursor: pointer;
+  padding: 5px;
+}
+.legend-log {
+  border: dashed black 2px;
+  background-color: white;
+  padding: 6px;
+  font-size: 3rem;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.header-app {
+  position: fixed;
+  top: 0;
+  min-height: 160px;
+  max-height: fit-content;
+  background-color: rgb(164, 233, 233);
+  width: 100vw;
+  text-align: center;
+  font-size: 250%;
+  text-decoration: underline;
+  border: dotted 2px black;
+}
+.guest-book {
+  margin-top: 15%;
 }

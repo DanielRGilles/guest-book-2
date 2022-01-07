@@ -5,9 +5,14 @@ import { useName } from '../context/NameContext'
 
 
 export default function Header() {
-    const { name } = useName();    
+    const { name, setName } = useName();
+    
+    const handleClick = () => {
+        setName('')
+    }
+
     return (
-        <header className=' header-top text-2xl m-4 space-x-4 flex-col items-center justify-self-center'>
+        <header className='header-app'>
          
          {name ? <Link to='/guest-book' className='title-page'>Guest Book</Link>
          : <Link to='/login' className='title-page'>Guest Book</Link> }
@@ -16,6 +21,7 @@ export default function Header() {
          { name ? <div>Hello,  {name}</div>
                 : <div> Welcome, Friend</div>} 
             </main>
+            {name ? <button onClick={handleClick} className='logout-button'>Log Out</button> : null }
         </header>
     )
 }
