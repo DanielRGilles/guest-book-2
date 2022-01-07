@@ -13,7 +13,7 @@ export default function GuestBook() {
     <main className="flex-col justify-self-center items-center w-2/3">
     <Input/>
     <Entries/>
-    <Footer/>  
+      
     </main>
     <div></div>
     </div>
