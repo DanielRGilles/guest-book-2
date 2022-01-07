@@ -1,23 +1,28 @@
-import Entries from "./components/Entries";
-import Footer from "./components/Footer";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { PrivateRoute } from './components/PrivateRoute';
+import GuestBook from "./views/GuestBook";
+import Login from './views/Login'
 import Header from "./components/Header";
-import Input from "./components/Input";
-import './App.css'
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
-  <div className="w-2/3 h-screen bg-slate-500 justify-items-center">
-    <Header/>
-    <div className="cnt flex">
-    <div></div>
-    <main className="flex-col justify-self-center items-center w-2/3">
-    <Input/>
-    <Entries/>
-    <Footer/>  
-    </main>
-    <div></div>
-    </div>
-    </div>
-
-    )
+    <Router>
+     <Header />
+        <Switch>
+           <Route path="/login">
+            <Login />
+          </Route>
+          <PrivateRoute path="/guest-book">
+            <GuestBook />
+          </PrivateRoute>
+        </Switch>
+        <Footer />
+    </Router>
+  );
 }

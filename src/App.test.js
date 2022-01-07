@@ -11,6 +11,6 @@ test('renders guest book page', () => {
       </EntryProvider>
     </NameProvider>
   )
-  const linkElement = screen.getByText(/Sign Book/i)
+  const linkElement = screen.getByText(/Guest Book/i)
   expect(linkElement).toBeInTheDocument()
 })
