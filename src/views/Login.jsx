@@ -2,9 +2,6 @@ import { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import { useName } from '../context/NameContext';
 
-
-
-
 export default function Login() {
   const history = useHistory();
   const { name, setName } = useName();
