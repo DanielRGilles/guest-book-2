@@ -1,6 +1,4 @@
 import Entries from "../components/Entries";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import Input from "../components/Input";
 import '../App.css'
 
